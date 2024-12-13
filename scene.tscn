@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4cgcwi0suhj5"]
+[gd_scene load_steps=13 format=3 uid="uid://4cgcwi0suhj5"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_4r34v"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_cubqm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://t0avlmlvlkpj" path="res://Wall texture.png" id="4_5gxii"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="4_7lpui"]
 [ext_resource type="Script" path="res://Area2d.cs" id="5_gaj13"]
+[ext_resource type="Texture2D" uid="uid://evt650fjqnr1" path="res://Ball texture.png" id="7_ots6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ftv"]
 
@@ -799,3 +800,16 @@ script = ExtResource("5_gaj13")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Area2D"]
 shape = SubResource("RectangleShape2D_shys0")
 metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Area2D"]
+position = Vector2(-17.8822, -190.26)
+rotation = 3.14159
+scale = Vector2(0.0203594, -0.101067)
+script = ExtResource("4_7lpui")
+size = Vector2(149.944, 149.944)
+fill_color = Color(0.0823529, 0, 0.807843, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level"]
+position = Vector2(572, 55)
+scale = Vector2(0.92, 0.82)
+texture = ExtResource("7_ots6b")
