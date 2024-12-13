@@ -1,0 +1,801 @@
+[gd_scene load_steps=12 format=3 uid="uid://4cgcwi0suhj5"]
+
+[ext_resource type="Script" path="res://Player.cs" id="1_4r34v"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_cubqm"]
+[ext_resource type="Texture2D" uid="uid://bmxj6ip2wkdtg" path="res://Updated Blair 2.png" id="2_scm26"]
+[ext_resource type="Texture2D" uid="uid://t0avlmlvlkpj" path="res://Wall texture.png" id="4_5gxii"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="4_7lpui"]
+[ext_resource type="Script" path="res://Area2d.cs" id="5_gaj13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ftv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn6oh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6edpi"]
+size = Vector2(20.375, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clmhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shys0"]
+
+[node name="Scene" type="Node2D"]
+position = Vector2(-1, -5)
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(604, -130)
+script = ExtResource("1_4r34v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Player"]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/StaticBody2D"]
+texture = ExtResource("2_scm26")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
+shape = SubResource("RectangleShape2D_l0ftv")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Player/StaticBody2D"]
+script = ExtResource("2_cubqm")
+size = Vector2(20, 20)
+corner_radius = 0.0
+style = 1
+fill_color = Color(1, 1, 1, 0)
+outline_color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+position = Vector2(76, 361)
+scale = Vector2(7.64, 37.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+shape = SubResource("RectangleShape2D_pn6oh")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/StaticBody2D/CollisionShape2D"]
+position = Vector2(2.74869, 0.664893)
+script = ExtResource("2_cubqm")
+size = Vector2(20, 20)
+corner_radius = 0.0
+fill_color = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/StaticBody2D"]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.0266981, 0.128546)
+texture = ExtResource("4_5gxii")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+position = Vector2(1089, 362)
+scale = Vector2(7.64, 37.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+position = Vector2(-1.1875, 0)
+shape = SubResource("RectangleShape2D_6edpi")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/StaticBody2D2/CollisionShape2D"]
+script = ExtResource("2_cubqm")
+size = Vector2(20, 20)
+corner_radius = 0.0
+fill_color = Color(1, 1, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Level/StaticBody2D2/CollisionShape2D"]
+position = Vector2(0.00944519, 0.0531921)
+scale = Vector2(0.0266981, 0.128546)
+texture = ExtResource("4_5gxii")
+
+[node name="Node2D" type="Node2D" parent="Level"]
+scale = Vector2(0.8, 0.8)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(317.5, 187.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D3"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D3"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580482, 0.294148, 1.92523e-07, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(1048.5, 278.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D17"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D17"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580482, 0.294148, 1.92523e-07, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(428.5, 187.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D4"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D4"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580482, 0.294148, 1.92523e-07, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(529.5, 187.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D5"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D5"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(640.5, 187.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D6"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D6"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(751.5, 187.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D7"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D7"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(862.5, 187.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D8"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D8"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(963.5, 187.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D9"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D9"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(398.5, 278.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D11"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D11"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(499.5, 278.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D12"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D12"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(610.5, 278.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D13"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D13"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(721.5, 278.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D14"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D14"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(832.5, 278.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D15"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D15"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(933.5, 278.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D16"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D16"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(398.5, 278.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D18"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D18"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(499.5, 278.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D19"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D19"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(610.5, 278.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D20"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D20"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D21" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(721.5, 278.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D21"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D21"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D22" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(832.5, 278.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D22"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D22"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(933.5, 278.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D23"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D23"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D32" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(1034.5, 475.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D32"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D32"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D33" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(384.5, 475.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D33"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D33"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D34" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(485.5, 475.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D34"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D34"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D35" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(596.5, 475.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D35"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D35"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D36" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(707.5, 475.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D36"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D36"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D37" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(818.5, 475.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D37"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D37"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D38" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(919.5, 475.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D38"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D38"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D39" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(384.5, 475.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D39"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D39"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D40" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(485.5, 475.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D40"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D40"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D41" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(596.5, 475.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D41"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D41"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D42" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(707.5, 475.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D42"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D42"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D43" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(818.5, 475.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D43"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D43"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D44" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(919.5, 475.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D44"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D44"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(1074.5, 187.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D10"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D10"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D24" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(317.5, 376.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D24"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D24"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D25" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(428.5, 376.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D25"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D25"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(529.5, 376.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D26"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D26"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D27" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(640.5, 376.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D27"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D27"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D28" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(751.5, 376.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D28"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D28"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D29" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(862.5, 376.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D29"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D29"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D30" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(963.5, 376.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D30"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D30"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D31" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(1074.5, 376.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D31"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D31"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D45" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(317.5, 575.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D45"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D45"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D46" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(428.5, 575.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D46"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D46"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D47" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(529.5, 575.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D47"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D47"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D48" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(640.5, 575.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D48"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D48"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D49" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(751.5, 575.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D49"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D49"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D50" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(862.5, 575.5)
+rotation = -1.5723
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D50"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D50"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D51" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(963.5, 575.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D51"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D51"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D52" type="StaticBody2D" parent="Level/Node2D"]
+position = Vector2(1074.5, 575.5)
+rotation = -0.263299
+scale = Vector2(0.360001, 0.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Node2D/StaticBody2D52"]
+shape = SubResource("CircleShape2D_clmhk")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Node2D/StaticBody2D52"]
+script = ExtResource("4_7lpui")
+fill_color = Color(0.580392, 0.294118, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="Level"]
+position = Vector2(307, 623)
+scale = Vector2(-14.7352, 2.96832)
+script = ExtResource("5_gaj13")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Area2D"]
+shape = SubResource("RectangleShape2D_shys0")
+metadata/_edit_lock_ = true
